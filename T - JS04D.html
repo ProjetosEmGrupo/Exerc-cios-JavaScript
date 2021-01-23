@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Avaliação 4D</title>
+</head>
+	<script type="text/javascript">
+		var i = 0, link = new Array (
+			"https://spguia.melhoresdestinos.com.br/system/fotos_local/fotos/43439/show/praia-da-bombaca.jpg", 
+			"https://spguia.melhoresdestinos.com.br/system/fotos_local/fotos/43440/show/praia-da-bombaca.jpg", 
+			"https://spguia.melhoresdestinos.com.br/system/fotos_local/fotos/43441/show/praia-da-bombaca.jpg",
+			"https://spguia.melhoresdestinos.com.br/system/fotos_local/fotos/43442/show/praia-da-bombaca.jpg");
+		function slide(a){
+			document.getElementById('foto').src = link[a];
+			atualizar();
+		}
+		function atualizar(){
+			i++;
+			window.setTimeout(function(){slide(i);}, 1000);
+			if(i == 3){
+				i = 0;
+			}
+		}
+	</script>
+	<body onLoad="atualizar()">
+		<img id="foto" width="720" height="480" src="https://spguia.melhoresdestinos.com.br/system/fotos_local/fotos/43439/show/praia-da-bombaca.jpg">
+	</body>
+</html>

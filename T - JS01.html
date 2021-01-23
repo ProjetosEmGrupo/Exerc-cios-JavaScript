@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Avaliação 1 </title>
+</head>
+<script type="text/javascript">
+	var n1 = 0, n2 = 0, media = 0;
+		      function calc(){
+		      	n1 = parseFloat(document.getElementById("n1").value, 10);
+		      	n2 = parseFloat(document.getElementById("n2").value, 10);
+		      	media = (n1 + n2)/2;
+		      	if(media >= 9.0){
+		      		document.getElementById("msg").innerHTML="Conceito: E";
+		      	}
+		      	else if((media >= 7.5) && (media < 9.0)){
+		      		document.getElementById("msg").innerHTML="Conceito: A";
+		      	}
+		      	else if((media >= 6.0) && (media < 7.5)){
+		      		document.getElementById("msg").innerHTML="Conceito: B";
+		      	}
+		      	else{
+		      		document.getElementById("msg").innerHTML="Conceito: C";
+		      	}
+		      } 
+</script>
+<body>
+	<input id="n1" type="number" placeholder="Nota 1:"/>
+	<br>
+	<br>
+	<input id="n2" type="number" placeholder="Nota 2:"/>
+	<br>
+	<h4 id="msg">Conceito: </h2>
+	<input type="button" value="Media" onclick="calc();"/>
+</body>
+</html>

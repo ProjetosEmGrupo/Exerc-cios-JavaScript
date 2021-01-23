@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Avaliação 4A</title>
+</head>
+<script type="text/javascript">
+	function randomico(){
+		var n = Math.floor(Math.random() * 11);
+		var resp = document.getElementById("resp");
+		var campo1 = document.getElementById("op1");
+		var campo2 = document.getElementById("op2");
+		var campo3 = document.getElementById("op3");
+		campo1.style.backgroundColor = "white";
+		campo2.style.backgroundColor = "white";
+		campo3.style.backgroundColor = "white";
+		resp.style.color = "black";
+
+		if(document.getElementById("op1").value == n){
+			document.getElementById("resp").innerHTML = "Acertou na primeira";
+			campo1.style.backgroundColor = "green";
+			resp.style.color = "green"; 
+		}
+		else if((document.getElementById("op1").value != n) & 
+			(document.getElementById("op2").value == n)){
+			document.getElementById("resp").innerHTML = "Acertou na segunda";
+			campo2.style.backgroundColor = "green";
+			resp.style.color = "green"; 
+		}
+		else if((document.getElementById("op1").value != n) & (document.getElementById("op2").value != n) & (document.getElementById("op3").value == n)){
+			document.getElementById("resp").innerHTML = "Acertou na terceira";
+			campo3.style.backgroundColor = "green";
+			resp.style.color = "green"; 
+		}
+		else{
+			document.getElementById("resp").innerHTML = "Errou todas as opções";
+			campo1.style.backgroundColor = "red";
+			campo2.style.backgroundColor = "red";
+			campo3.style.backgroundColor = "red";
+			resp.style.color = "red";
+		}
+			document.getElementById("numero").innerHTML = "Numero gerado foi: "+n;
+			document.getElementById("op1").value = "''";
+			document.getElementById("op2").value = "''";
+			document.getElementById("op3").value = "''";
+			
+	}
+</script>
+<body>
+<body>
+	<h3> Digitar um número de 0 a 9: </h3>
+	<input id="op1" type="number" name="op1" placeholder="Tentativa 1:" min="0" max="9" maxlength="1"/>
+	<br>
+	<br>
+	<input id="op2" type="number" name="op2" placeholder="Tentativa 2:" min="0" max="9" maxlength="1"/>
+	<br>
+	<br>
+	<input id="op3" type="number" name="op3" placeholder="Tentativa 3:" min="0" max="9" maxlength="1"/>
+	<br>
+	<br>
+	<h4 id="resp">.</h4>
+	<h4 id="numero">Número gerado foi: .</h4>
+	<input type="button" value="Comparar" onclick="randomico();"/>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Avaliação 2</title>
+</head>
+<script type="text/javascript">
+		var peso = 0, altura = 0, resultado = 0;
+		    function IMC(){
+		      	peso = parseFloat(document.getElementById("peso").value, 10);
+		      	altura = parseFloat(document.getElementById("altura").value, 10);
+		      	resultado = peso / (altura * altura);
+				switch(true){
+		      		case (resultado < 18.5):
+			      		document.getElementById("msg").innerHTML = "O IMC é: " + resultado;
+			      		document.getElementById("msg2").innerHTML = "Descrição: Abaixo do Peso";
+			      		break;
+		      		case (resultado >= 18.5 && resultado <= 24.9):
+		      			document.getElementById("msg").innerHTML = "O IMC é: " + resultado;
+		      			document.getElementById("msg2").innerHTML = "Descrição: Peso normal";
+		      			break;
+		      		case (resultado >= 25.0 && resultado <= 29.9):
+		      			document.getElementById("msg").innerHTML = "O IMC é: " + resultado;
+		      			document.getElementById("msg2").innerHTML = "Descrição: Sobrepeso";
+		      			break;
+		      		case (resultado >= 30.0 && resultado <= 34.9):
+		      			document.getElementById("msg").innerHTML = "O IMC é: " + resultado;
+		      			document.getElementById("msg2").innerHTML ="Descrição: Obesidade Grau I";
+		      			break;
+		      		case (resultado >= 35.0 && resultado <= 39.9):
+		      			document.getElementById("msg").innerHTML = "O IMC é: " + resultado;
+		      			document.getElementById("msg2").innerHTML = "Descrição: Obesidade Grau II";
+		      			break;
+		      		case (resultado >= 40.0):
+		      			document.getElementById("msg").innerHTML = "O IMC é: " + resultado;
+		      			document.getElementById("msg2").innerHTML = "Descrição: Obesidade Grau III";
+		      			break;
+		      	}
+		    } 
+</script>
+<body>
+	<input id="peso" type="number" placeholder="Digite o Peso em KG:"/>
+	<br>
+	<br>
+	<input id="altura" type="number" placeholder="Digite a Altura em M:"/>
+	<br>
+	<h4 id="msg"> O IMC é: </h2>
+	<h4 id="msg2"> Descrição: </h2>
+	<input type="button" value="Calcular IMC" onclick="IMC();"/>
+</body>
+</html>

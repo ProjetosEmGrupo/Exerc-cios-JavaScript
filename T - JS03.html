@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Avaliação 3</title>
+</head>
+<script type="text/javascript">
+	function campos(){
+		var i = 1, j = document.getElementById("tam").value;
+		let nomes = new Array(j);
+		while(i <= j){
+			nomes[i] = prompt("Digite o nome "+i+" :", "");
+			i++;
+		}
+		nomes.sort();
+		i = 1;
+		n = 65;
+		while(i <= j){
+			document.getElementById("nomes").innerHTML = document.getElementById("nomes").innerHTML + "<p>" + String.fromCharCode(n++) + " . " + nomes[i].toUpperCase();
+			i++;
+		}
+	}
+</script>
+<body>
+	<input id="tam" type="number" name="tam" placeholder="Numero de Nomes: "/>
+	<br>
+	<br>
+	<button name="botao_num" type="button" onclick="campos();">Gerar Campos</button>
+	<h3>Nomes Ordenados: </h3>
+	<h3 id="nomes"></h3>
+</body>
+</html>

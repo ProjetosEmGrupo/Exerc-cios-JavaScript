@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Avaliação 5A</title>
+</head>
+	<script type="text/javascript">
+		var x = " ";
+		function teste(){
+				let Aluno = {nome : document.getElementById("nome").value , matricula : document.getElementById("matricula").value, curso : document.getElementById("curso").value};
+				x = x + (Aluno.nome+" "+Aluno.matricula+" "+Aluno.curso+"<br>");
+				document.getElementById("resp").innerHTML = x;
+				document.getElementById("nome").value = " ";
+				document.getElementById("matricula").value = " ";
+				document.getElementById("curso").value = " ";
+		}
+	</script>
+	<body>
+	<form id="Form">
+		<h3> Digite o nome: </h3>
+		<input id="nome" type="text" name="nome" placeholder="Nome:"/>
+		<h3> Digite a matricula: </h3>
+		<input id="matricula" type="text" name="matricula" placeholder="Matricula:"/>
+		<h3> Digite o nome do curso: </h3>
+		<input id="curso" type="text" name="curso" placeholder="Nome do Curso:"/>
+		<input type="button" value="Teste" onclick="teste();"/>
+		<br>
+		<h3> Alunos cadastrados: </h3>
+		<h4 id="resp"></h4>
+	</form>
+	</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Avaliação 4B</title>
+</head>
+<script type="text/javascript">
+	function datas(){
+		var diaSemana, mesAno, msgInicial, hora, minutos;
+		let data = new Date();
+			switch(true){
+		      		case (data.getDay() == 0):
+			      		diaSemana = "Domingo";
+			      		break;
+		      		case (data.getDay() == 1):
+			      		diaSemana = "Segunda-Feira";
+			      		break;
+			      	case (data.getDay() == 2):
+			      		diaSemana = "Terça-Feira";
+			      		break;
+			      	case (data.getDay() == 3):
+			      		diaSemana = "Quarta-Feira";
+			      		break;
+			      	case (data.getDay() == 4):
+			      		diaSemana = "Quinta-Feira";
+			      		break;
+			      	case (data.getDay() == 5):
+			      		diaSemana = "Sexta-Feira";
+			      		break;
+			      	case (data.getDay() == 6):
+			      		diaSemana = "Sabado";
+			      		break;
+		      	}
+		      	switch(true){
+		      		case (data.getMonth() == 0):
+			      		mesAno = "Janeiro";
+			      		break;
+			      	case (data.getMonth() == 1):
+			      		mesAno = "Fevereiro";
+			      		break;
+			      	case (data.getMonth() == 2):
+			      		mesAno = "Março";
+			      		break;
+			      	case (data.getMonth() == 3):
+			      		mesAno = "Abril";
+			      		break;
+			      	case (data.getMonth() == 4):
+			      		mesAno = "Maio";
+			      		break;
+			      	case (data.getMonth() == 5):
+			      		mesAno = "Junho";
+			      		break;
+			      	case (data.getMonth() == 6):
+			      		mesAno = "Julho";
+			      		break;
+			      	case (data.getMonth() == 7):
+			      		mesAno = "Agosto";
+			      		break;
+			      	case (data.getMonth() == 8):
+			      		mesAno = "Setembro";
+			      		break;
+			      	case (data.getMonth() == 9):
+			      		mesAno = "Outubro";
+			      		break;
+			      	case (data.getMonth() == 10):
+			      		mesAno = "Novembro";
+			      		break;
+			      	case (data.getMonth() == 11):
+			      		mesAno = "Dezembro";
+			      		break;
+		      	}
+		      	if(((data.getHours() >= 0) & (data.getMinutes() >= 0)) & ((data.getHours() <= 12) & (data.getMinutes() <= 59))){
+		      		msgInicial = "Bom Dia! ";
+		      	}
+		      	else if(((data.getHours() >= 13) & (data.getMinutes() >= 0)) & ((data.getHours() <= 17) & (data.getMinutes() <= 59))){
+		      		msgInicial = "Boa Tarde! ";
+		      	}
+		      	else if (((data.getHours() >= 18) & (data.getMinutes() >= 0)) & ((data.getHours() <= 23) & (data.getMinutes() <= 59))){
+		      		msgInicial = "Boa Noite! ";
+		      	}
+		      	hora = (data.getHours() < 10) ? '0' + data.getHours() : data.getHours();
+		      	minutos = (data.getMinutes() < 10) ? '0' + data.getMinutes() : data.getMinutes();
+
+		      	document.getElementById("msgHora").innerHTML = msgInicial + "Hoje é "+ diaSemana+", "+ data.getDate()+" de "+mesAno+" de "+data.getFullYear()+" - "+hora+":"+minutos+"hs";
+	}
+</script>
+<body>
+<body onload="datas();">
+	<h2 id="msgHora"> </h2>
+</body>
+</html>
